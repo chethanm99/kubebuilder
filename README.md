@@ -93,17 +93,17 @@ See [DESIGN.md](DESIGN.md) for the guiding principles of the various Kubebuilder
 
 TL;DR:
 
-Provide clean library abstractions with clear and well exampled godocs.
+Provide clean library abstractions with clear and well-exampled go docs.
 
-- Prefer using go *interfaces* and *libraries* over relying on *code generation*
+- Prefer using go *interfaces* and *libraries* over-relying on *code generation*
 - Prefer using *code generation* over *1 time init* of stubs
 - Prefer *1 time init* of stubs over forked and modified boilerplate
 - Never fork and modify boilerplate
 
 ## Techniques
 
-- Provide higher level libraries on top of low level client libraries
-  - Protect developers from breaking changes in low level libraries
+- Provide higher-level libraries on top of low-level client libraries
+  - Protect developers from breaking changes in low-level libraries
   - Start minimal and provide progressive discovery of functionality
   - Provide sane defaults and allow users to override when they exist
 - Provide code generators to maintain common boilerplate that can't be addressed by interfaces
@@ -121,13 +121,13 @@ See [VERSIONING.md](VERSIONING.md).
 Before you file an issue, please search existing issues to see if your issue is already covered.
 
 - ### Slack
-  For realtime discussion,  you can join the [#kubebuilder](https://slack.k8s.io/#kubebuilder) slack channel. Slack requires registration, but the Kubernetes team is open invitation to anyone to register here. Feel free to come and ask any questions.
+  For real-time discussion,  you can join the [#kubebuilder](https://slack.k8s.io/#kubebuilder) slack channel. Slack requires registration, but the Kubernetes team is an open invitation to anyone to register here. Feel free to come and ask any questions.
 
 ## Contributing
 
-Contributions are greatly appreciated. The maintainers actively manage the issues list, and try to highlight issues suitable for newcomers.
+Contributions are greatly appreciated. The maintainers actively manage the issues list and try to highlight issues suitable for newcomers.
 The project follows the typical GitHub pull request model. See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
-Before starting any work, please either comment on an existing issue, or file a new one.
+Before starting any work, please either comment on an existing issue or file a new one.
 
 ## Operating Systems Supported
 
@@ -146,12 +146,12 @@ Additionally, these projects include a `go.mod` file specifying dependency versi
 Kubebuilder relies on [controller-runtime](https://github.com/kubernetes-sigs/controller-runtime) and its Go and Kubernetes dependencies.
 Therefore, the versions defined in the `Makefile` and `go.mod` files are the ones that have been tested, supported, and recommended.
 
-Each minor version of Kubebuilder is tested with a specific minor version of client-go.
+Each minor version of Kubebuilder is tested with a specific minor version of the client-go.
 While a Kubebuilder minor version *may* be compatible with other client-go minor versions,
 or other tools this compatibility is not guaranteed, supported, or tested.
 
 The minimum Go version required by Kubebuilder is determined by the highest minimum
-Go version required by its dependencies. This is usually aligned with the minimum
+The go version is required by its dependencies. This is usually aligned with the minimum
 Go version required by the corresponding `k8s.io/*` dependencies.
 
 Compatible `k8s.io/*` versions, client-go versions, and minimum Go versions can be found in the `go.mod`
@@ -159,7 +159,7 @@ file scaffolded for each project for each [tag release](https://github.com/kuber
 
 **Example:** For the `4.1.1` release, the minimum Go version compatibility is `1.22`.
 You can refer to the samples in the testdata directory of the tag released [v4.1.1](https://github.com/kubernetes-sigs/kubebuilder/tree/v4.1.1/testdata),
-such as the [go.mod](https://github.com/kubernetes-sigs/kubebuilder/blob/v4.1.1/testdata/project-v4/go.mod#L3) file for `project-v4`. You can also check the tools versions supported and
+such as the [go.mod](https://github.com/kubernetes-sigs/kubebuilder/blob/v4.1.1/testdata/project-v4/go.mod#L3) file for `project-v4`. You can also check the versions of the tools supported and
 tested for this release by examining the [Makefile](https://github.com/kubernetes-sigs/kubebuilder/blob/v4.1.1/testdata/project-v4/Makefile#L160-L165).
 
 ## Community Meetings
@@ -168,7 +168,7 @@ The following meetings happen biweekly:
 
 - Kubebuilder Meeting
 
-You are more than welcome to attend. For further info join to [kubebuilder@googlegroups.com](https://groups.google.com/g/kubebuilder).
+You are more than welcome to attend. For further info join [kubebuilder@googlegroups.com](https://groups.google.com/g/kubebuilder).
 Every month, our team meets on the first Thursday at 11:00 PT (Pacific Time) to discuss our progress and plan for the upcoming weeks.
 Please note that we have been syncing more frequently offline via Slack lately. However, if you add a topic to the agenda, we will hold the meeting as scheduled.
 Additionally, we can use this channel to demonstrate new features.
