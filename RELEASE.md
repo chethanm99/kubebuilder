@@ -23,24 +23,24 @@ process was done to ensure that we have an aligned process under the org (simila
    You will need to use the [kubebuilder-release-tools][kubebuilder-release-tools] to generate release notes. See [here][release-notes-generation]
 
 > **Note**
-> - You will need to have checkout locally from the remote repository the previous branch
+> - You will need to check out locally from the remote repository of the previous branch
 > - Also, ensure that you fetch all tags from the remote `git fetch --all --tags`
-> - Also, if you face issues to generate the release notes you might want to able to sort it out by running i.e.:
+> - Also, if you face issues generating the release notes you might want to able to sort it out by running i.e.:
 > `go run sigs.k8s.io/kubebuilder-release-tools/notes --use-upstream=false --from=v3.11.0 --branch=release-X`
 
 
 ### Draft a new release from GitHub
 
 1. Create a new tag with the correct version from the new `release-<MAJOR.MINOR>` branch
-2. Verify the Release Github Action. It should build the assets and publish in the draft release
-3. You also need to manually add the changelog generated above on the release page and publish it. Now, the code source is released !
+2. Verify the Release Github Action. It should build the assets and publish them in the draft release
+3. You also need to manually add the changelog generated above on the release page and publish it. Now, the code source has been released!
 
 ### Update the website docs (https://book.kubebuilder.io/quick-start.html)
 
 1. Push a PR to update the `book-v3` branch with the changes of the latest release branch created (`release-<MAJOR.MINOR>`)
 2. Ping in the [Kubebuilder Slack channel](https://kubernetes.slack.com/archives/CAR30FCJZ) and ask for reviews.
 
-### When the release be done and the website update: Announce the new release:
+### When the release is done and the website is updated: Announce the new release:
 
 1. Announce the new release on the Slack channel, i.e:
 
@@ -67,7 +67,7 @@ The releases occur in an account in the Google Cloud (See [here](https://console
 
 ### To build the Kubebuilder CLI binaries:
 
-A trigger GitHub action [release](.github/workflows/release.yml) is trigged when a new tag is pushed.
+A trigger GitHub action [release](.github/workflows/release.yml) is triggered when a new tag is pushed.
 This action will call the job [./build/.goreleaser.yml](./build/.goreleaser.yml).
 
 ###  (Deprecated) - To build the Kubebuilder-tools: (Artifacts required to use ENV TEST)
@@ -75,8 +75,8 @@ This action will call the job [./build/.goreleaser.yml](./build/.goreleaser.yml)
 > We no longer build the artifacts and the promotion of those is deprecated. For more info
 see: https://github.com/kubernetes-sigs/kubebuilder/discussions/4082
 
-Kubebuilder projects requires artifacts which are used to do test with ENV TEST (when we call `make test` target)
-These artifacts can be checked in the service page: https://storage.googleapis.com/kubebuilder-tools
+Kubebuilder projects require artifacts that are used to do tests with ENV TEST (when we call `make test` target)
+These artifacts can be checked on the service page: https://storage.googleapis.com/kubebuilder-tools
 
 The build is made from the branch [tools-releases](https://github.com/kubernetes-sigs/kubebuilder/tree/tools-releases) and the trigger will call the `build/cloudbuild_tools.yaml` passing
 as argument the architecture and the SO that should be used, e.g:
@@ -91,11 +91,11 @@ For further information see the [README](https://github.com/kubernetes-sigs/kube
 see: https://github.com/kubernetes-sigs/kubebuilder/discussions/3907
 
 These images are built from the project [brancz/kube-rbac-proxy](https://github.com/brancz/kube-rbac-proxy).
-The projects built with Kubebuilder creates a side container with `kube-rbac-proxy` to protect the Manager.
+The projects constructed with Kubebuilder create a side container with `kube-rbac-proxy` to protect the Manager.
 
 These images can be checked in the console, see [here](https://console.cloud.google.com/gcr/images/kubebuilder/GLOBAL/kube-rbac-proxy).
 
-The project `kube-rbac-proxy` is in the process to be donated to the k8s org. However, it is going on for a long time and then,
+The project `kube-rbac-proxy` is in the process of being donated to the k8s org. However, it has been going on for a long time and then,
 we have no ETA for that to occur. When that occurs we can automate this process. But until there we need to generate these images
 by bumping the versions/tags released by `kube-rbac-proxy` on the branch
 [kube-rbac-proxy-releases](https://github.com/kubernetes-sigs/kubebuilder/tree/kube-rbac-proxy-releases)
@@ -108,7 +108,7 @@ to Kubebuilder users that these images will be available.
 
 ### (Deprecated) - To build the `gcr.io/kubebuilder/pr-verifier` images:
 
-> We are working on to move all out from GCP Kubebuilder project. For further information see: https://github.com/kubernetes/k8s.io/issues/2647#issuecomment-2111182864
+> We are working on moving all out from the GCP Kubebuilder project. For further information see: https://github.com/kubernetes/k8s.io/issues/2647#issuecomment-2111182864
 
 These images are used to verify the PR title and description. They are built from [kubernetes-sigs/kubebuilder-release-tools](https://github.com/kubernetes-sigs/kubebuilder-release-tools/).
 In Kubebuilder, we have been using this project via the GitHub action [.github/workflows/verify.yml](.github/workflows/verify.yml)
