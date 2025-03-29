@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 
 # Copyright 2019 The Kubernetes Authors.
